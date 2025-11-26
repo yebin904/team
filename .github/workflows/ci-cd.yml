@@ -112,7 +112,7 @@ jobs:
         script: |
           # 1. 이제 이 디렉터리와 파일들이 존재함
           cd /home/ubuntu/my-project
-          echo DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }} > .env
+          echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" > .env
           echo "DB_URL=${{ secrets.DB_URL }}" >> .env
           echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
@@ -127,4 +127,4 @@ jobs:
           sudo docker compose up -d
           
           # 5. 사용하지 않는 Docker 이미지를 정리합니다.
-          sudo docker image prune -ff
+          sudo docker image prune -f

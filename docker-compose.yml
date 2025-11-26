@@ -22,8 +22,6 @@ services:
     shm_size: '1g'
     environment:
       - ORACLE_PASSWORD=java1234
-      - APP_USER=springboot
-      - APP_USER_PASSWORD=java1234
       - ORACLE_CHARACTERSET=AL32UTF8
       - TZ=Asia/Seoul
     volumes:

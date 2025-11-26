@@ -1,5 +1,5 @@
 services:
-  app:
+  team:
     image: ${DOCKER_USERNAME}/team:latest
     container_name: team
     ports:
@@ -11,6 +11,8 @@ services:
     depends_on:
       - oracle
     restart: unless-stopped
+    networks:
+      - team-network
   oracle:
     image: gvenzl/oracle-xe:18
     container_name: oracle
@@ -25,6 +27,12 @@ services:
       - docker-data:/opt/oracle/oradata
       - ./script.sql:/container-entrypoint-initdb.d/script.sql
     restart: unless-stopped
+    networks:
+      - team-network
+
+networks:
+  team-network:
+    driver: bridge
      
 volumes:
   docker-data:    

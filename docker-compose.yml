@@ -9,7 +9,8 @@ services:
       - SPRING_DATASOURCE_USERNAME=springboot
       - SPRING_DATASOURCE_PASSWORD=java1234
     depends_on:
-      - oracle
+      oracle:
+        condition: service_healthy
     restart: unless-stopped
     networks:
       - team-network
@@ -24,7 +25,7 @@ services:
       - ORACLE_PASSWORD=java1234
     volumes:
       - oracle-data:/opt/oracle/oradata
-      - ./script.sql:/container-entrypoint-initdb.d
+      - ./script.sql:/container-entrypoint-initdb.d/init.sql
     restart: unless-stopped
     networks:
       - team-network

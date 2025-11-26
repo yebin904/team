@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   build:
+    # runs-on: ubuntu-22.04 # 추후 변경
     runs-on: ubuntu-latest
     
     steps:

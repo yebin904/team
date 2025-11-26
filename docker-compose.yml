@@ -9,8 +9,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=springboot
       - SPRING_DATASOURCE_PASSWORD=java1234
     depends_on:
-      oracle:
-        condition: service_healthy
+      - oracle
     restart: unless-stopped
     networks:
       - team-network

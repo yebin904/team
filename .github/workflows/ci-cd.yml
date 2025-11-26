@@ -78,7 +78,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: deploy-files
-        path: .  # <--- [수정됨] 현재 폴더(.)에 바로 다운로드
+        path: .  # 현재 폴더(.)에 바로 다운로드
 
     # 2. scp로 복사하기 전에 EC2에 디렉터리를 미리 생성
     - name: EC2에 배포 디렉터리 생성

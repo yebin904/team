@@ -18,9 +18,7 @@ services:
       - "1521:1521"
       - "5550:5550"
     environment:
-      - ORACLE_PASSWORD=${DB_PASSWORD}
-      - APP_USER=${DB_USERNAME}
-      - APP_USER_PASSWORD=${DB_PASSWORD}          
+      - ORACLE_PASSWORD=${DB_PASSWORD}      
       - ORACLE_CHARACTERSET=AL32UTF8
       - TZ=Asia/Seoul
     volumes:

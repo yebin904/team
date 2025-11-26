@@ -38,7 +38,17 @@ commit;
 
 ALTER SESSION SET CONTAINER=XEPDB1;
 
-ALTER SESSION SET CURRENT_SCHEMA=springboot;
+CREATE USER springboot IDENTIFIED BY java1234;
+
+GRANT CREATE SESSION TO springboot;
+
+GRANT RESOURCE TO springboot;
+GRANT CREATE TABLE TO springboot;
+GRANT CREATE VIEW TO springboot;
+GRANT CREATE SEQUENCE TO springboot;
+
+ALTER USER springboot DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
+
 
 create table tblTeam (
     seq number primary key,
